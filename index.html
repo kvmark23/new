@@ -1,209 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Elixir Royale</title>
-
-<!-- ===== CSS ORIGINAL (style.css) ===== -->
-<style>
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  -webkit-font-smoothing: antialiased;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-#app {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-h1 { font-size: 2.4em; line-height: 1.2; }
-.highlight { color: #ff00ff; font-weight: bold; }
-
-/* CTA */
-.cta-button {
-  display: inline-block;
-  margin: 40px auto;
-  padding: 15px 40px;
-  background: #ff00ff;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  border-radius: 12px;
-  font-weight: 700;
-}
-
-/* Vídeo responsivo */
-.video-section {
-  margin: 40px 0;
-}
-.video-container {
-  position: relative;
-  width: 100%;
-}
-.video-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Cards */
-.testimonials-grid, .features-grid, .pricing-grid, .choices-container {
-  display: grid;
-  gap: 20px;
-  margin-top: 30px;
-}
-.testimonial-card, .feature-card, .pricing-card,
-.choice-card {
-  padding: 20px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 14px;
-  text-align: left;
-}
-
-.choice-card.good { border: 2px solid #00ff76; }
-.choice-card.bad { border: 2px solid #ff5151; }
-
-footer {
-  margin-top: 60px;
-  padding: 20px;
-  opacity: 0.7;
-  font-size: 14px;
-}
-
-/* Responsivo */
-@media (min-width: 768px) {
-  .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
-  .features-grid { grid-template-columns: repeat(4, 1fr); }
-  .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-  .choices-container { grid-template-columns: repeat(2, 1fr); }
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-<div id="app"></div>
+  <div id="app">
 
-<script>
-// ===== main.js convertido para HTML direto =====
+    <div class="announcement-bar">
+      🎮 OFERTA LIMITADA! Painel de Elixir Infinito - Acesso Instantâneo 24h ⚡ 100% Seguro & Anti-Ban ✓
+    </div>
 
-document.querySelector('#app').innerHTML = `
-  <div class="announcement-bar" style="padding:10px;background:#ff00ff;color:white;font-weight:600;">
-    🎮 OFERTA LIMITADA! Painel de Elixir Infinito - Acesso Instantâneo 24h ⚡ 100% Seguro & Anti-Ban ✓
+    <header class="header">
+      <div class="logo">ELIXIR ROYALE</div>
+    </header>
+
+    <section class="headline">
+      <h1>Conquiste <span class="highlight">Elixir Infinito</span> e Domine Todas as Arenas do <span class="highlight">Clash Royale</span> Hoje!</h1>
+    </section>
+
+    <section class="video-section">
+      <div class="video-wrapper">
+        <iframe allow="fullscreen;autoplay" allowfullscreen src="https://streamable.com/e/sbug40?autoplay=1"></iframe>
+      </div>
+    </section>
+
+    <a href="#pricing" class="cta-button">ACESSAR PAINEL</a>
+
+    <section class="testimonials">
+      <h2>O Que Nossos Jogadores Dizem</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <b>Carlos R. — Arena 15</b>
+          <p>"Incrível! Cheguei na Arena 15 facilmente. Melhor investimento!"</p>
+        </div>
+        <div class="testimonial-card">
+          <b>Marina S. — Pro Player</b>
+          <p>"3 meses usando, nunca tive problema. Suporte rápido!"</p>
+        </div>
+        <div class="testimonial-card">
+          <b>Pedro L. — Top Clan</b>
+          <p>"Domino todas as partidas agora! Perfeito!"</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>O Painel é para você que:</h2>
+      <div class="features-grid">
+        <div class="feature-card">🎯 Não aguenta mais perder partidas</div>
+        <div class="feature-card">⚡ Quer vantagens competitivas</div>
+        <div class="feature-card">🛡️ Busca segurança total</div>
+        <div class="feature-card">👑 Quer ser um Pro Player</div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <h2>Escolha Seu Painel</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Painel Basic — 1 Mês</h3>
+          <p><del>R$ 19,90</del> <b>R$ 5,99</b></p>
+          <button class="pricing-btn">ESCOLHER PAINEL</button>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Vitalício — Em Breve</h3>
+          <p><b>EM BREVE</b></p>
+          <button disabled class="disabled">AGUARDE</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="choice-section">
+      <h2>Você Tem 2 Escolhas Agora</h2>
+      <div class="choices-container">
+        <div class="choice-card bad">❌ Continuar perdendo e travado nas arenas baixas.</div>
+        <div class="choice-card good">✅ Dominar TODAS as arenas com Elixir Infinito.</div>
+      </div>
+    </section>
+
+    <footer>
+      © 2024 Elixir Royale — Não afiliado à Supercell.
+    </footer>
+
   </div>
 
-  <header class="header" style="margin-top:20px;font-size:32px;font-weight:900;">
-    ELIXIR ROYALE
-  </header>
-
-  <section class="headline">
-    <h1>
-      Conquiste <span class="highlight">Elixir Infinito</span> e Domine Todas as Arenas do
-      <span class="highlight">Clash Royale</span> Hoje!
-    </h1>
-  </section>
-
-  <!-- ======= VIDEO STREAMABLE RESPONSIVO ======= -->
-  <section class="video-section">
-    <div style="position:relative; width:100%; height:0px; padding-bottom:133.333%">
-      <iframe allow="fullscreen;autoplay" allowfullscreen height="100%"
-        src="https://streamable.com/e/sbug40?autoplay=1"
-        width="100%"
-        style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;">
-      </iframe>
-    </div>
-  </section>
-
-  <a href="#pricing" class="cta-button">ACESSAR PAINEL</a>
-
-  <!-- TESTEMUNHOS -->
-  <section class="testimonials">
-    <h2>O Que Nossos Jogadores Dizem</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <b>Carlos R. — Arena 15</b>
-        <p>"Incrível! Cheguei na Arena 15 facilmente. Melhor investimento!"</p>
-      </div>
-      <div class="testimonial-card">
-        <b>Marina S. — Pro Player</b>
-        <p>"3 meses usando, nunca tive problema. Suporte rápido!"</p>
-      </div>
-      <div class="testimonial-card">
-        <b>Pedro L. — Top Clan</b>
-        <p>"Domino todas as partidas agora! Perfeito!"</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features">
-    <h2>O Painel é para você que:</h2>
-    <div class="features-grid">
-      <div class="feature-card">🎯 Não aguenta mais perder partidas</div>
-      <div class="feature-card">⚡ Quer vantagens competitivas</div>
-      <div class="feature-card">🛡️ Busca segurança total</div>
-      <div class="feature-card">👑 Quer ser um Pro Player</div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <h2>Escolha Seu Painel</h2>
-
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Painel Basic — 1 Mês</h3>
-        <p><del>R$ 19,90</del> <b>R$ 5,99</b></p>
-        <button style="padding:12px 20px;border-radius:10px;background:#ff00ff;color:white;border:none;font-size:18px;">
-          ESCOLHER PAINEL
-        </button>
-      </div>
-
-      <div class="pricing-card" style="border:2px solid #ff00ff;">
-        <h3>Vitalício — Em Breve</h3>
-        <p><b style="font-size:22px;">EM BREVE</b></p>
-        <button disabled style="padding:12px 20px;border-radius:10px;background:#555;color:white;border:none;font-size:18px;">
-          AGUARDE
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ESCOLHAS -->
-  <section class="choice-section">
-    <h2>Você Tem 2 Escolhas Agora</h2>
-    <div class="choices-container">
-      <div class="choice-card bad">
-        ❌ Continuar perdendo e travado nas arenas baixas.
-      </div>
-      <div class="choice-card good">
-        ✅ Dominar TODAS as arenas com Elixir Infinito.
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2024 Elixir Royale — Não afiliado à Supercell.
-  </footer>
-`;
-
-</script>
-
+  <script src="main.js"></script>
 </body>
 </html>
